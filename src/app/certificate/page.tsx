@@ -114,8 +114,8 @@ export default function CertificatePage() {
                         A curated collection of achievements and credentials.
                     </p>
                     <p className="text-red-500 lg:text-sm md:text-lg">
-                       ! Refresh this website if the certificate doesnt appear
-                    </p>
+                      {`! Refresh this website if the certificate doesn't appear`}
+                   </p>
                 </div>
 
                 {/* Grid Certificate */ }
