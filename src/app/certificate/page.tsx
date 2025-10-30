@@ -114,7 +114,7 @@ export default function CertificatePage() {
                         A curated collection of achievements and credentials.
                     </p>
                     <p className="text-red-500 lg:text-sm md:text-lg">
-                       ! Refresh this website if the certificate doesn't appear
+                       ! Refresh this website if the certificate doesnt appear
                     </p>
                 </div>
 
