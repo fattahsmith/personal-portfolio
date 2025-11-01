@@ -247,20 +247,20 @@ export default function BubbleMenu({
                     "box-border whitespace-nowrap overflow-hidden",
                   ].join(" "),
                   style: {
-                    ["--item-rot" as any]: `${item.rotation ?? 0}deg`,
-                    ["--pill-bg" as any]: menuBg,
-                    ["--pill-color" as any]: menuContentColor,
-                    ["--hover-bg" as any]: item.hoverStyles?.bgColor || "#f3f4f6",
-                    ["--hover-color" as any]: item.hoverStyles?.textColor || menuContentColor,
-                    background: "var(--pill-bg)",
-                    color: "var(--pill-color)",
-                    minHeight: "var(--pill-min-h, 160px)",
-                    padding: "clamp(1.5rem, 3vw, 8rem) 0",
-                    fontSize: "clamp(1.5rem, 4vw, 4rem)",
-                    fontWeight: 400,
-                    lineHeight: 1,
-                    willChange: "transform",
-                  } as CSSProperties,
+  "--item-rot": `${item.rotation ?? 0}deg`,
+  "--pill-bg": menuBg,
+  "--pill-color": menuContentColor,
+  "--hover-bg": item.hoverStyles?.bgColor || "#f3f4f6",
+  "--hover-color": item.hoverStyles?.textColor || menuContentColor,
+  background: "var(--pill-bg)",
+  color: "var(--pill-color)",
+  minHeight: "var(--pill-min-h, 160px)",
+  padding: "clamp(1.5rem, 3vw, 8rem) 0",
+  fontSize: "clamp(1.5rem, 4vw, 4rem)",
+  fontWeight: 400,
+  lineHeight: 1,
+  willChange: "transform",
+} as React.CSSProperties & Record<string, string | number>,
                   ref: (el: HTMLAnchorElement | null) => {
                     if (el) bubblesRef.current[idx] = el;
                   },
@@ -286,7 +286,8 @@ export default function BubbleMenu({
                         </span>
                       </a>
                     ) : (
-                      <Link href={item.href} role="menuitem" {...(commonProps as any)}>
+                      <Link href={item.href} role="menuitem" {...(commonProps as unknown as React.ComponentProps<"a">)}>
+
                         <span
                           className="pill-label inline-block"
                           style={{ willChange: "transform, opacity", height: "1.2em", lineHeight: 1.2 }}

@@ -1,7 +1,6 @@
 "use client";
 
-import { section } from "framer-motion/client";
-import { motion } from "motion/react";
+import { motion, Variants } from "framer-motion";
 
 export type Certificate = {
     title: string;
@@ -12,12 +11,12 @@ export type Certificate = {
     href?: string;
 };
 
-const item = {
+const item: Variants = {
     hidden: { opacity: 0, y: 24 },
     show: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+        transition: { duration: 0.55, ease: "easeInOut" },
     },
 };
 
@@ -34,6 +33,9 @@ export default function CertificateCard({
     <section id="certif" >
         <motion.article
             variants={ item }
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
             className="
         group relative rounded-2xl border border-white/10 bg-white/[0.06]
         p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]

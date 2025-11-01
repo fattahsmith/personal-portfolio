@@ -1,13 +1,14 @@
 import type { NextConfig } from "next";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
+  outputFileTracingRoot: process.cwd(),
+  output: "export",
 };
-
 
 export default nextConfig;

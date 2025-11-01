@@ -31,7 +31,6 @@ export default function ProjectCard({
     return (
         <motion.article
             custom={ index }
-            variants={ fadeUp }
             initial="hidden"
             whileInView="show"
             viewport={ { once: true, amount: 0.35 } }
