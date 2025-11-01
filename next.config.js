@@ -3,7 +3,8 @@
 const nextConfig = {
   /* config options here */
   outputFileTracingRoot: process.cwd(),
-  // Menghapus output: 'export' agar kompatibel dengan Vercel deployment
+  // Konfigurasi untuk Vercel deployment
+  distDir: '.next'
 };
 
 module.exports = nextConfig;
